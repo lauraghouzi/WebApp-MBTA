@@ -23,7 +23,7 @@ def get_lat_long(place_name):
     See https://developer.mapquest.com/documentation/geocoding-api/address/get/
     for Mapquest Geocoding  API URL formatting requirements.
     """
-    ' ' == ','
+    place_name = place_name.replace(' ',',')
     MAPQUEST_URL = (get_json(f"http://www.mapquestapi.com/geocoding/v1/address?key={MAPQUEST_API_KEY}&location={place_name},Boston,MA"))
     lat_long = MAPQUEST_URL['results'][0]['locations'][0]['latLng']
     return tuple(lat_long.values())
@@ -43,7 +43,7 @@ def get_nearest_station(latitude, longitude):
         availabilty = "no wheelchair accessibility available" 
     elif wheelchair_accessible > 0:
         availabilty = "wheelchair accessibility available"
-    return (f"{station_name} station has {availabilty}.")
+    return (station_name,availabilty)
 
 def find_stop_near(place_name):
     """
@@ -60,9 +60,6 @@ def main():
     """
     place_name = input("Please enter an address in Boston, to find an MBTA stop near you that is wheelchair accessible.\n")
     print(find_stop_near(place_name))
-    
-
-
 
 
 if __name__ == '__main__':

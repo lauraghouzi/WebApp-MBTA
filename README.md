@@ -1,2 +1,2 @@
 # WebApp-MBTA
- This is the base repo for MBTA project. Please read [instructions](instructions.md). 
+ This is Laura Ghouzi's MBTA project. Please read [Project Wrapup](project_wrapup.md). 

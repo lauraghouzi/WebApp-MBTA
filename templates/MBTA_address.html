@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MBTA Helper</title>
+  </head>
+  <body>
+    <h1>MBTA Helper</h1>
+    <form method="POST" name="mbta_helper">
+      {% if error %}
+      <p style="color:red">This address is not valid.</p>
+      {% endif %}
+      <p>
+        Please enter an address in Boston, to find an MBTA stop near you that is wheelchair accessible.
+      </p>
+      <p>
+        <input type="text" size="4" name="place_name" />
+      </p>
+      <p>
+        <input type="submit" value="Submit" />
+      </p>
+    </form>
+  </body>
+</html>
